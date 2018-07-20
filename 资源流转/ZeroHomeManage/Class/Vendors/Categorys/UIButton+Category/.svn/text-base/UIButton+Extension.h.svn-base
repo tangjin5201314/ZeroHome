@@ -1,0 +1,41 @@
+//
+//  UIButton+Extension.h
+//  Diver
+//
+//  Created by Tentinet on 14-3-29.
+//  Copyright (c) 2014年 Tentinet. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+#define BUTTON_DEFAULT_EDGE UIEdgeInsetsMake(5, 5, 5, 5)
+//#define BUTTON_DEFAULT_EDGE UIEdgeInsetsMake(0, 5, 0, 5)
+
+typedef enum {
+    ButtonImagePositionLeft = 0,    //图片显示在按钮左边
+    ButtonImagePositionRight,       //图片显示在按钮右边
+    ButtonImagePositionTop,         //图片显示在按钮上边
+    ButtonImagePositionBottom,      //图片显示在按钮下边
+}ButtonImagePosition;
+
+@interface UIButton (Extension)
+
+- (void)resizeBackgroundImage; //拉伸背景图片
+- (void)alginImageRightToTitleAndSpace:(CGFloat)space; //把图片移到文字的右边,space是图片与文字的间距
+- (void)alginImageRightToTitleAndSpace:(CGFloat)space minSize:(CGSize)minSize; //把图片移到文字的右边,space是图片与文字的间距
+
+- (void)alginImageLeftToTitleAndSpace:(CGFloat)space; 
+- (void)alginImageLeftToTitleAndSpace:(CGFloat)space minSize:(CGSize)minSize; //把图片移到文字的左边,space是图片与文字的间距, minWidth按钮的最小宽度
+
+
+/*设置图片与文字的对齐方式
+ *@imagePosition 图片在按钮中显示的位置
+ *@space 图片与文字的间距
+ */
+
+- (void)imagePosition:(ButtonImagePosition)imagePosition space:(CGFloat)space;
+
+- (void)imagePosition:(ButtonImagePosition)imagePosition space:(CGFloat)space padding:(UIEdgeInsets)padding;
+
+
+@end

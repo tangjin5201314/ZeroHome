@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="ResoucecirCulationCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="接入号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRJ-65-Ycm">
+                        <rect key="frame" x="18" y="15" width="65.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="营销员：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpx-QW-Yc0">
+                        <rect key="frame" x="18" y="57.5" width="65.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="接入号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fpn-oG-nfl">
+                        <rect key="frame" x="91" y="10" width="175" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="wsN-v9-jkI"/>
+                        </constraints>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="done"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBc-K6-u1v">
+                        <rect key="frame" x="91" y="52" width="175" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="uTx-aR-Reu"/>
+                        </constraints>
+                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <state key="normal" title="  郑炒年糕" backgroundImage="搜索选择时间.png">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2zD-y6-zVG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="0.5"/>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.92549019607843142" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="tff-VP-waA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2zD-y6-zVG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4MJ-re-55A"/>
+                    <constraint firstItem="gBc-K6-u1v" firstAttribute="trailing" secondItem="Fpn-oG-nfl" secondAttribute="trailing" id="AWF-V8-tvu"/>
+                    <constraint firstAttribute="trailing" secondItem="2zD-y6-zVG" secondAttribute="trailing" id="GyG-aH-HdI"/>
+                    <constraint firstItem="Fpn-oG-nfl" firstAttribute="centerY" secondItem="kRJ-65-Ycm" secondAttribute="centerY" id="KR8-so-SZO"/>
+                    <constraint firstItem="bpx-QW-Yc0" firstAttribute="centerY" secondItem="gBc-K6-u1v" secondAttribute="centerY" id="LGg-R6-DNq"/>
+                    <constraint firstItem="kRJ-65-Ycm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="SuR-4w-ENp"/>
+                    <constraint firstItem="kRJ-65-Ycm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="U5C-n0-Yju"/>
+                    <constraint firstItem="2zD-y6-zVG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WCb-Zm-rQa"/>
+                    <constraint firstItem="gBc-K6-u1v" firstAttribute="top" secondItem="Fpn-oG-nfl" secondAttribute="bottom" constant="12" id="Wn0-NP-Mjo"/>
+                    <constraint firstItem="gBc-K6-u1v" firstAttribute="leading" secondItem="Fpn-oG-nfl" secondAttribute="leading" id="pQT-KK-oOF"/>
+                    <constraint firstItem="bpx-QW-Yc0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="qvW-xE-QxA"/>
+                    <constraint firstItem="Fpn-oG-nfl" firstAttribute="leading" secondItem="kRJ-65-Ycm" secondAttribute="trailing" constant="7" id="zck-LQ-WoL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="jieru_field" destination="Fpn-oG-nfl" id="mn6-LN-NeK"/>
+                <outlet property="yingxiaoNameBtn" destination="gBc-K6-u1v" id="GYe-MA-4OJ"/>
+            </connections>
+            <point key="canvasLocation" x="-116" y="14.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="搜索选择时间.png" width="140" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,15 @@
+//
+//  NSString+checkNumber.h
+//  BYDFans
+//
+//  Created by TentinetIOS15 on 15/3/25.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSString (checkNumber)
+//验证是否全数字
+- (BOOL)checkNumberInput;
+
+@end

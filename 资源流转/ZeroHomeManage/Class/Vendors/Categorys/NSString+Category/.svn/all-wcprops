@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category
+END
+NSString+checkNumber.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkNumber.h
+END
+NSString+checkQQnumber.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkQQnumber.h
+END
+NSString+checkNumber.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkNumber.m
+END
+NSString+checkQQnumber.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkQQnumber.m
+END
+NSString+checkPassword.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkPassword.h
+END
+NSString+Helpers.h
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+Helpers.h
+END
+NSString+checkPassword.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkPassword.m
+END
+NSString+TransformToPinyin.h
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+TransformToPinyin.h
+END
+NSString+Helpers.m
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+Helpers.m
+END
+NSString+TransformToPinyin.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+TransformToPinyin.m
+END
+NSString+checkTelphone.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkTelphone.h
+END
+NSString+Extension.h
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+Extension.h
+END
+NSString+checkUsername.h
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkUsername.h
+END
+NSString+checkTelphone.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkTelphone.m
+END
+NSString+Extension.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+Extension.m
+END
+NSString+checkUsername.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/golf/!svn/ver/582/resouce/ios/Golf/XMPPCommen/Categorys/NSString+Category/NSString+checkUsername.m
+END

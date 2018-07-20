@@ -1,0 +1,38 @@
+//
+//  NSString+checkUsername.m
+//  BYDFans
+//
+//  Created by TentinetIOS15 on 15/4/10.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import "NSString+checkUsername.h"
+
+@implementation NSString (checkUsername)
+
+- (NSUInteger)validateLength:(NSString *)text
+{
+    NSUInteger asciiLength = 0;
+    for(NSUInteger i = 0; i < text.length; i++){
+        unichar uc = [text characterAtIndex:i];
+        asciiLength += isascii(uc)? 1 : 2;
+    }
+    //    NSUInteger unicodeLength = asciiLength / 2;
+    //    if(asciiLength % 2){
+    //        unicodeLength++;
+    //    }
+    
+    //方便与后台统一，使用ascii判断要么1要么2字节。下面@“我草泥马”为12字节算数
+    //    NSInteger len = [@"我草泥马" lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    //    NSLog(@"len = %d",len);
+    return asciiLength;
+}
+
+- (BOOL)checkUsernameInput
+{
+    NSString *usernameStr = @"^[\u4e00-\u9fa5]{2,10}$|^[0-9A-Za-z]{4,20}$";
+    NSPredicate *regextNumber = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",usernameStr];
+    return [regextNumber evaluateWithObject:self];
+}
+
+@end

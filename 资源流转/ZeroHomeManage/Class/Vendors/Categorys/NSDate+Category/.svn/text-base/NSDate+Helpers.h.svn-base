@@ -1,0 +1,35 @@
+
+//
+//  NSDate+Helpers.h
+//
+//  Created by Reejo Samuel on 8/2/13.
+//  Copyright (c) 2013 Reejo Samuel | m[at]reejosamuel.com All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSDate (Helpers)
+
+- (NSString *)formatWithString:(NSString *)format;
+- (NSString *)formatWithStyle:(NSDateFormatterStyle)style;
+- (NSString *)distanceOfTimeInWords;
+- (NSString *)distanceOfTimeInWords:(NSDate *)date;
+- (NSString *)localeWeekdayAtIndex:(NSInteger)index; //本地化星期
+
+/**
+ *  @author scan, 15-06-18 10:06:27
+ *
+ *  @brief  从1970年到现在的毫秒数
+ *  @return <#return value description#>
+ */
++ (NSTimeInterval)timeIntervalSince1970Millisecond;
+
+/**
+ *  @author scan, 15-06-18 10:06:08
+ *
+ *  @brief  从1970到date的毫秒数
+ *  @param date <#date description#>
+ *  @return <#return value description#>
+ */
++ (NSTimeInterval)timeIntervalSince1970MillisecondByDate:(NSDate *)date;
+@end

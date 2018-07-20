@@ -1,0 +1,13 @@
+//
+//  NSString+checkTelphone.h
+//  BYDFans
+//
+//  Created by 都是我的糖 ^_^ on 14-4-14.
+//  Copyright (c) 2014年 Tentinet. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSString (checkTelphone)
+-(BOOL)checkPhoneNumInput;
+@end

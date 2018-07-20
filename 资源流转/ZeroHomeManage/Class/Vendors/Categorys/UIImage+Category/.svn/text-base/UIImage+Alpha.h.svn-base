@@ -1,0 +1,32 @@
+// UIImage+Alpha.h
+// Created by Trevor Harmon on 9/20/09.
+// Free for personal or commercial use, with or without modification.
+// No warranty is expressed or implied.
+
+// Helper methods for adding an alpha layer to an image
+@interface UIImage (Alpha)
+
+typedef enum  {
+    GTTopToBottom = 0,//从上到小
+    GTLeftToRight = 1,//从左到右
+    GTUpleftTolowRight = 2,//左上到右下
+    GTUprightTolowLeft = 3,//右上到左下
+}GradientType;
+
+- (BOOL)hasAlpha;
+- (UIImage *)imageWithAlpha;
+- (UIImage *)transparentBorderImage:(NSUInteger)borderSize;
+- (CGImageRef)newBorderMask:(NSUInteger)borderSize size:(CGSize)size;
+
+/**
+ *  @author scan, 15-07-09 11:07:56
+ *
+ *  @brief  创建一个指定大小的渐变颜色图片
+ *  @param colors 颜色素组
+ *  @param type   GradientType
+ *  @param size   指定大小
+ *  @return 视图
+ */
++ (UIImage *)createGradientViewFromColors:(NSArray *)colors andType:(GradientType)type andSize:(CGSize)size;
+
+@end

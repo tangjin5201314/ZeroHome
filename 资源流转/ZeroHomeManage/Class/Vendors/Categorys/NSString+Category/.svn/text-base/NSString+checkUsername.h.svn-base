@@ -1,0 +1,16 @@
+//
+//  NSString+checkUsername.h
+//  BYDFans
+//
+//  Created by TentinetIOS15 on 15/4/10.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface NSString (checkUsername)
+
+//用户名是否规范
+- (BOOL)checkUsernameInput;
+
+@end

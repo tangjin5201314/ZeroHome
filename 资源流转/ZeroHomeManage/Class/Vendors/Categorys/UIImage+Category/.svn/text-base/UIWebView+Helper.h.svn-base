@@ -1,0 +1,50 @@
+//
+//  UIWebView+UIWebViewPoint.h
+//  BYDFans
+//
+//  Created by scan on 15/3/20.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface UIWebView (Helper)
+
+- (CGSize)windowSize;
+
+- (CGPoint)scrollOffset;
+
+/**
+ *  @author scan, 15-03-31 14:03:28
+ *
+ *  @brief  截获webview 调用alert的方法（就是自定义alertView）
+ *  @param sender  <#sender description#>
+ *  @param message <#message description#>
+ *  @param frame   <#frame description#>
+ */
+- (void)webView:(UIWebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(CGRect)frame;
+
+/**
+ *  @author scan, 15-03-31 14:03:17
+ *
+ *  @brief  截获webview 调用Confirm的方法（就是自定义Confirm）
+ *  @param sender  <#sender description#>
+ *  @param message <#message description#>
+ *  @param frame   <#frame description#>
+ *  @return <#return value description#>
+ */
+- (BOOL)webView:(UIWebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(CGRect)frame;
+
+/**
+ *  @author scan, 15-03-31 14:03:22
+ *
+ *  @brief  截获webview的Prompt输入框
+ *  @param view   <#view description#>
+ *  @param prompt <#prompt description#>
+ *  @param text   <#text description#>
+ *  @param frame  <#frame description#>
+ *  @return <#return value description#>
+ */
+- (NSString *)webView:(UIWebView *)view runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)text initiatedByFrame:(CGRect)frame;
+
+@end

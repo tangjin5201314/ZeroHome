@@ -1,0 +1,92 @@
+//
+//  PrefixHeader.pch
+//  ZeroHomeManage
+//
+//  Created by TW on 2018/3/7.
+//  Copyright © 2018年 TW. All rights reserved.
+//
+
+//#ifndef PrefixHeader_pch
+//#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <Availability.h>
+#import "MobClick.h"
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+//#ifdef DEBUG
+//#define NSLog(...) NSLog(__VA_ARGS__)
+//#define debugMethod() NSLog(@"%s", __func__)
+//#else
+//#define NSLog(...)
+//#define debugMethod()
+//#endif
+
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Masonry.h"
+#import "SVProgressHUD.h"
+#import "UIButton+WebCache.h"
+#import "UserDefalut.h"
+#import "ShowSignHUB.h"
+#import "UIView+Helpers.h"
+#import "UITableView+SDAutoTableViewCellHeight.h"
+
+#define circleCellWidth [UIScreen mainScreen].bounds.size.width - 2 * circleCellMargin  //cell的宽度
+#define circleCellMargin 15  //间距
+
+#define circleCellPhotosWH (circleCellWidth - 2 * (circleCellMargin + circleCellPhotosMargin)) / 3
+
+#define KImageMaxKB     600.0f  //标记图片最大内存大小为600K
+
+#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+
+#define COLOR_RGB(r,g,b) [UIColor colorWithRed:(r/255.0f) green:(g/255.0f) blue:(b/255.0f) alpha:1]
+#define FONT_SYSTEM(x)   [UIFont systemFontOfSize:x]
+
+#define default_blue_color [UIColor colorWithRed:68/255.0 green:129/255.0 blue:210/255.0 alpha:1.0] //系统默认蓝色
+#define kScreenScale [UIScreen mainScreen].scale   //UIScreen的scale属性在iphone 5,6,6s,7,8打印都是2，在plus，iPhone X打印都是3   // [UIFont systemFontOfSize:size * kScreenScale/2.0]
+#define Font(size)   [UIFont systemFontOfSize:size]
+
+#define RGB_B(x,y,z)    [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:1.0]     //只为控制联想时
+
+#define HexRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define iOS8CameraNotice       @"请在iPhone的\"设置->零点家园\"中开启【零点家园】相机服务"
+#define iOS7CameraNotice       @"请到iPhone的\"设置->隐私->相机\"中开启【零点家园】相机服务"
+#define IOSAdderssBookNotic    @"请到设置>隐私>通讯录打开【零点家园】的权限设置"
+#define IOSCoreToothBLueNotic    @"请到设置>蓝牙>打开【零点家园】的蓝牙设置"
+
+#define kSystemVersion [[UIDevice currentDevice].systemVersion floatValue]
+
+/*************手机型号**************/
+#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)
+#define IS_IPhone6 (667 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+#define IS_IPhone6plus (736 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+/*************手机型号**************/
+
+#define TJKeyWindow [UIApplication sharedApplication].keyWindow
+
+#define UMAPPKEY @"565e57c867e58ee76d005f95"
+#define baiduPushapikey @"7NtC7b3W1V043vZy7ArsdyVM"
+#define baiduPushSECRET @"FaKWisXs34FSipBIzuTPUDPr0XCzVEwD"
+
+#define TomBaiDuPuShAPIKEY @"3R46Wm5KdXPWxdXTAjkKDwAT"
+#define TomBaiDuPuShSECRET @"Db4lOvNcSG2dyZDEoeZeLDzeMLm3iwYF "
+
+#define IsAppStore 1
+
+#endif /* PrefixHeader_pch */

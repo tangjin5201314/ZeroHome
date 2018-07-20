@@ -1,0 +1,19 @@
+//
+//  NSString+checkNumber.m
+//  BYDFans
+//
+//  Created by TentinetIOS15 on 15/3/25.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import "NSString+checkNumber.h"
+
+@implementation NSString (checkNumber)
+- (BOOL)checkNumberInput
+{
+    NSString *numberStr = @"^[0-9]*$";
+    NSPredicate *regextNumber = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",numberStr];
+    return [regextNumber evaluateWithObject:self];
+}
+
+@end

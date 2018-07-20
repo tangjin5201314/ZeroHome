@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TJNoticeMenu">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="365"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="底图.png" translatesAutoresizingMaskIntoConstraints="NO" id="yGI-ml-MfO">
+                    <rect key="frame" x="0.0" y="0.0" width="261" height="304"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2X-lo-GQH">
+                    <rect key="frame" x="114" y="324" width="33" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="33" id="1vM-9U-h0U"/>
+                        <constraint firstAttribute="height" constant="33" id="Vzm-gg-FAT"/>
+                    </constraints>
+                    <state key="normal" image="关闭按钮.png"/>
+                    <connections>
+                        <action selector="closeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="hGm-Ru-1q9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="D2X-lo-GQH" secondAttribute="bottom" constant="8" id="1sZ-UG-1XH"/>
+                <constraint firstItem="yGI-ml-MfO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CAU-3q-I5y"/>
+                <constraint firstItem="D2X-lo-GQH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KrR-AP-BB5"/>
+                <constraint firstAttribute="trailing" secondItem="yGI-ml-MfO" secondAttribute="trailing" id="Oc6-NF-TnJ"/>
+                <constraint firstItem="yGI-ml-MfO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YQ2-RZ-LUG"/>
+                <constraint firstItem="D2X-lo-GQH" firstAttribute="top" secondItem="yGI-ml-MfO" secondAttribute="bottom" constant="20" id="u2S-81-ONK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="151.5" y="162.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="关闭按钮.png" width="16" height="16"/>
+        <image name="底图.png" width="261" height="313"/>
+    </resources>
+</document>

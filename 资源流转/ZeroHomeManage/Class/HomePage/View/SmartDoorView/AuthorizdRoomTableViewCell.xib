@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AuthorizdRoomTableViewCell" rowHeight="54" id="KGk-i7-Jjw" customClass="AuthorizdRoomTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="53.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="暂未绑定机房" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U4C-we-aYX">
+                        <rect key="frame" x="26" y="14" width="163" height="24"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNB-Nx-78S">
+                        <rect key="frame" x="204" y="14" width="90" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="2nA-IQ-64b"/>
+                        </constraints>
+                        <state key="normal" title="查询信息" backgroundImage="rounder.png">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="下拉.png" translatesAutoresizingMaskIntoConstraints="NO" id="pMl-xB-cF7">
+                        <rect key="frame" x="165" y="26" width="15" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="RQV-45-9Ct"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="U4C-we-aYX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="2yC-W3-Io0"/>
+                    <constraint firstItem="XNB-Nx-78S" firstAttribute="leading" secondItem="U4C-we-aYX" secondAttribute="trailing" constant="15" id="IW1-l2-1CU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="XNB-Nx-78S" secondAttribute="trailing" constant="10" id="OYN-BZ-wLp"/>
+                    <constraint firstItem="U4C-we-aYX" firstAttribute="top" secondItem="XNB-Nx-78S" secondAttribute="top" id="VEe-1t-Tjo"/>
+                    <constraint firstItem="pMl-xB-cF7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="WZB-v4-Kke"/>
+                    <constraint firstItem="U4C-we-aYX" firstAttribute="bottom" secondItem="XNB-Nx-78S" secondAttribute="bottom" id="a7k-B6-5kl"/>
+                    <constraint firstItem="pMl-xB-cF7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ep4-04-FIN"/>
+                    <constraint firstItem="U4C-we-aYX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="eqT-DM-0r1"/>
+                    <constraint firstItem="pMl-xB-cF7" firstAttribute="centerY" secondItem="U4C-we-aYX" secondAttribute="centerY" id="fCu-nK-OyH"/>
+                    <constraint firstItem="XNB-Nx-78S" firstAttribute="leading" secondItem="pMl-xB-cF7" secondAttribute="trailing" constant="24" id="oP0-w5-nwX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="arrowImage" destination="pMl-xB-cF7" id="Tqs-5c-GFb"/>
+                <outlet property="checkMessage_btn" destination="XNB-Nx-78S" id="C5F-Bw-lpU"/>
+                <outlet property="motoRoom_field" destination="U4C-we-aYX" id="RAq-Rp-15T"/>
+            </connections>
+            <point key="canvasLocation" x="289" y="303"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="rounder.png" width="337" height="40"/>
+        <image name="下拉.png" width="10" height="5"/>
+    </resources>
+</document>

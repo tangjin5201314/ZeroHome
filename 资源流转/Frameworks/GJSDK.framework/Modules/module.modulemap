@@ -1,0 +1,6 @@
+framework module GJSDK {
+  umbrella header "GJSDK.h"
+
+  export *
+  module * { export * }
+}

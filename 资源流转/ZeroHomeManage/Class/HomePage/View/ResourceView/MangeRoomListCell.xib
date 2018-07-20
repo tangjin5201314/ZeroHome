@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MangeRoomListCell">
+            <rect key="frame" x="0.0" y="0.0" width="105" height="176"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="105" height="176"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="机柜.png" translatesAutoresizingMaskIntoConstraints="NO" id="gro-9G-l4j">
+                        <rect key="frame" x="11" y="8" width="83" height="132"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="83" id="6hx-1B-xaN"/>
+                            <constraint firstAttribute="width" secondItem="gro-9G-l4j" secondAttribute="height" multiplier="83:132" id="Qcj-6w-CvP"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="机柜-A-001" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQ2-ME-gR8">
+                        <rect key="frame" x="0.0" y="147" width="105" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="R9y-Yh-zFl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cQ2-ME-gR8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7nE-Vv-zSP"/>
+                <constraint firstAttribute="trailing" secondItem="cQ2-ME-gR8" secondAttribute="trailing" id="Yzh-MU-WBV"/>
+                <constraint firstItem="gro-9G-l4j" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="brl-Ht-P9F"/>
+                <constraint firstItem="gro-9G-l4j" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lRx-Dt-kpl"/>
+                <constraint firstItem="cQ2-ME-gR8" firstAttribute="top" secondItem="gro-9G-l4j" secondAttribute="bottom" constant="7" id="rOf-Tn-V8D"/>
+                <constraint firstAttribute="bottom" secondItem="cQ2-ME-gR8" secondAttribute="bottom" constant="8" id="rmX-hp-yoy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="105" height="107"/>
+            <connections>
+                <outlet property="jigui_lbl" destination="cQ2-ME-gR8" id="sYE-z4-ekh"/>
+            </connections>
+            <point key="canvasLocation" x="52.5" y="80"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="机柜.png" width="103" height="141"/>
+    </resources>
+</document>

@@ -1,0 +1,42 @@
+//
+//  UIViewController+BYDVCCategory.h
+//  BYDFans
+//
+//  Created by wanggw on 15-1-18.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface UIViewController (VCCategory)
+
+
+//不安全的共享的数据缓冲，内存警告的时候会自动释放
++ (NSCache *)shareCache;
+- (NSCache *)shareCache;
+
+/** 获取当前显示的视图控制器 */
++ (UIViewController *)getNowViewController;
+
+
+#pragma mark - ----创建返回键
+
+/** 
+ 所有左右边按钮尽量都使用下面的方法创建
+ */
+
+//添加自动的返回按钮：默认返回按钮只有一个蓝色箭头
+- (void)addDefaultBackButton:(NSString *)btnTitle;
+- (void)addDefaultBackButton:(NSString *)btnTitle target:(id)target action:(SEL)action;
+//添加自动的返回按钮：自定义返回按钮的箭头图片
+- (void)addDefaultBackButtonWithBackImage:(NSString *)image target:(id)target action:(SEL)action;
+
+#pragma mark - ----创建通用按钮
+//蓝色背景按钮全部是用该方法创建
+- (UIButton *)createCommenButtonWithTitle:(NSString *)title;
+
+#pragma mark - ----去掉搜索框背景
+- (UIImage *)createImageWithColor:(UIColor *)color;
+- (void)_findAndHideSearchBarShadowInView:(UIView *)view;
+
+@end

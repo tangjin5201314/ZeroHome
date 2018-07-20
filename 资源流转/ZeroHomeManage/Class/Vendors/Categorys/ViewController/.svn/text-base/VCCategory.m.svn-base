@@ -1,0 +1,236 @@
+//
+//  UIViewController+BYDVCCategory.m
+//  BYDFans
+//
+//  Created by wanggw on 15-1-18.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import "VCCategory.h"
+
+static NSCache *globalCache = nil;
+
+@implementation UIViewController (VCCategory)
+
++ (NSCache *)shareCache
+{
+    if(!globalCache)
+    {
+        globalCache = [[NSCache alloc] init];
+    }
+    
+    return globalCache;
+}
+
+- (NSCache *)shareCache  //不安全的共享的数据缓冲，内存警告的时候会自动释放
+{
+    return [[self class] shareCache];
+}
+
++ (UIViewController *)getNowViewController  //获取当前显示的视图控制器
+{
+    UIViewController *nowController = nil;
+    
+    //获取异常的类型名
+    UITabBarController *tab = (UITabBarController *)APP.window.rootViewController;
+    if([tab isKindOfClass:[UITabBarController class]])
+    {
+        nowController = [[self class] viewControllerFromTabBarController:tab];
+    }
+    else if([tab respondsToSelector:@selector(viewControllers)])
+    {
+        for(UINavigationController *nav in [tab viewControllers])
+        {
+            if([nav isKindOfClass:[UINavigationController class]])
+            {
+                if(nav.viewControllers.count > 1)
+                {
+                    nowController = nav.viewControllers.lastObject;
+                    break;
+                }
+            }
+        }
+    }
+    
+    if(!nowController)
+    {
+        if([tab respondsToSelector:@selector(selectedViewController)])
+        {
+            id selectedVC = tab.selectedViewController;
+            if([selectedVC respondsToSelector:@selector(viewControllers)])
+            {
+                nowController = [selectedVC viewControllers].lastObject;
+            }
+        }
+    }
+    
+    if(!nowController)
+    {
+        nowController = tab;
+    }
+    
+    if([nowController isKindOfClass:[UINavigationController class]])
+    {
+        UINavigationController *nav = (UINavigationController *)nowController;
+        if(nav.viewControllers.count > 0)
+        {
+            nowController = nav.viewControllers.lastObject;
+        }
+    }
+    
+    return nowController;
+}
+
++ (UIViewController *)viewControllerFromTabBarController:(UITabBarController *)tab
+{
+    UIViewController *nowController = nil;
+    UINavigationController *nav = (UINavigationController *)tab.selectedViewController;
+    
+    if([nav isKindOfClass:[UINavigationController class]])
+    {
+        if(nav.viewControllers.count > 0)
+        {
+            nowController = nav.viewControllers.lastObject;
+        }
+    }
+    else if([nav isKindOfClass:[UITabBarController class]])
+    {
+        return [[self class] viewControllerFromTabBarController:tab];
+    }
+    else if([tab isKindOfClass:[UIViewController class]])
+    {
+        nowController = tab;
+    }
+    
+    return nowController;
+}
+
+#pragma mark - ----创建返回键
+
+- (void)addDefaultBackButton:(NSString *)btnTitle //添加自动的返回按钮
+{
+    UIEdgeInsets imageInsets = UIEdgeInsetsMake(5, 0, 5, 43);//上，左，下，右
+    UIImage *imgBack = [UIImage imageNamed:@"inform_nav_icn_return_normal@2x"];
+    UIImage *imgBackFocus = [UIImage imageNamed:@"inform_nav_icn_return_normal@2x"];
+    
+
+    UIButton *backButton = [[UIButton alloc] initWithFrame:Rect(0, 0, 54, 30)];
+    [backButton setImage:imgBack forState:UIControlStateNormal];
+    [backButton setImage:imgBackFocus forState:UIControlStateHighlighted];
+    backButton.imageEdgeInsets = imageInsets;
+    
+    if(btnTitle){
+        UIEdgeInsets titleInsets = UIEdgeInsetsMake(3, -13, 3, 0);//上，左，下，右
+        backButton.titleEdgeInsets = titleInsets;
+        [backButton setTitle:btnTitle forState:UIControlStateNormal];
+        [backButton setTitleColor:default_blue_color forState:UIControlStateNormal];
+        backButton.titleLabel.font = Font(15);
+    }
+    
+    [backButton addTarget:self.navigationController action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
+    
+    //滑动返回
+    //self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    //self.navigationItem.backBarButtonItem.style = UIBarButtonItemStyleDone;
+}
+
+- (void)addDefaultBackButton:(NSString *)btnTitle target:(id)target action:(SEL)action //添加自动的返回按钮
+{
+    UIEdgeInsets imageInsets = UIEdgeInsetsMake(5, 0, 5, 43);//上，左，下，右
+    UIImage *imgBack = Image(@"inform_nav_icn_return_normal@2x");
+    UIImage *imgBackFocus = Image(@"inform_nav_icn_return_normal@2x");
+    
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:Rect(0, 0, 54, 30)];
+    [backButton setImage:imgBack forState:UIControlStateNormal];
+    [backButton setImage:imgBackFocus forState:UIControlStateHighlighted];
+    backButton.imageEdgeInsets = imageInsets;
+    
+    if(btnTitle){
+        UIEdgeInsets titleInsets = UIEdgeInsetsMake(3, -13, 3, 0);//上，左，下，右
+        backButton.titleEdgeInsets = titleInsets;
+        [backButton setTitle:btnTitle forState:UIControlStateNormal];
+        [backButton setTitleColor:default_blue_color forState:UIControlStateNormal];
+        backButton.titleLabel.font = Font(15);
+    }
+    
+    [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
+}
+
+- (void)addDefaultBackButtonWithBackImage:(NSString *)image target:(id)target action:(SEL)action  //添加自动的返回按钮
+{
+    UIEdgeInsets imageInsets = UIEdgeInsetsMake(3, 0, 3, 43);//上，左，下，右
+    UIImage *imgBack = [UIImage imageNamed:image];
+    UIImage *imgBackFocus = [UIImage imageNamed:image];
+    
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame:Rect(0, 0, 58, 30)];
+    [backButton setImage:imgBack forState:UIControlStateNormal];
+    [backButton setImage:imgBackFocus forState:UIControlStateHighlighted];
+    backButton.imageEdgeInsets = imageInsets;
+
+    
+    [backButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem.style = UIBarButtonItemStyleDone;
+}
+
+#pragma mark - ----创建通用按钮
+
+- (UIButton *)createCommenButtonWithTitle:(NSString *)title
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.titleLabel.font = Font(18.0);
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:WhiteColor forState:UIControlStateNormal];
+    [button setBackgroundImage:CommonBtnBGI_B_N forState:UIControlStateNormal];
+    [button setBackgroundImage:CommonBtnBGI_B_H forState:UIControlStateHighlighted];
+    
+    return button;
+}
+
+#pragma mark - ----去掉搜索框背景
+
+- (UIImage *)createImageWithColor:(UIColor *)color
+{
+    CGRect rect = Rect(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
+/**
+ * @author wanggw, 15-05-04 17:05:07
+ *
+ * @brief  去掉搜索框的SearchBarShadow
+ *
+ * @param view
+ */
+- (void)_findAndHideSearchBarShadowInView:(UIView *)view
+{
+    NSString *usc = @"_";
+    NSString *sb = @"UISearchBar";
+    NSString *sv = @"ShadowView";
+    NSString *s = [[usc stringByAppendingString:sb] stringByAppendingString:sv];
+    
+    for (UIView *v in view.subviews)
+    {
+        if ([v isKindOfClass:NSClassFromString(s)]) {
+            v.alpha = 0.0f;
+        }
+        [self _findAndHideSearchBarShadowInView:v];
+    }
+}
+
+
+@end

@@ -1,0 +1,81 @@
+//
+//  UIWebView+UIWebViewPoint.m
+//  BYDFans
+//
+//  Created by scan on 15/3/20.
+//  Copyright (c) 2015年 Tentinet. All rights reserved.
+//
+
+#import "UIWebView+Helper.h"
+
+@implementation UIWebView (Helper)
+
+- (CGSize)windowSize {
+
+    CGSize size;
+    size.width = [[self stringByEvaluatingJavaScriptFromString:@"window.innerWidth"] integerValue];
+    size.height = [[self stringByEvaluatingJavaScriptFromString:@"window.innerHeight"] integerValue];
+    return size;
+}
+
+- (CGPoint)scrollOffset {
+
+    CGPoint pt;
+    pt.x = [[self stringByEvaluatingJavaScriptFromString:@"window.pageXOffset"] integerValue];
+    pt.y = [[self stringByEvaluatingJavaScriptFromString:@"window.pageYOffset"] integerValue];
+    return pt;
+}
+
+- (void)webView:(UIWebView *)sender runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(CGRect)frame
+{
+//    if ([message isEqualToString:@"请先登录"] || [message contains:@"未登录"] == YES) {
+//        GWAlertView *alert = [GWAlertView alertWithTitle:@"温馨提示" message:message];
+//        alert.sureBlock = ^(){
+//    
+//            [[NSNotificationCenter defaultCenter] postNotificationName:kUserNeedLoginClickWebView object:nil];
+//        };
+//        [alert show];
+//    }else if ([message isEqualToString:@"表态成功"] || [message isEqualToString:@"您已表过态"]){
+//        [GWNoticeView successNoticeInWindow:[UIApplication sharedApplication].windows[0] title:message];
+//    }
+//    else if ([message isEqualToString:@"undefined"]) {
+//
+//    }else {
+//        [GWNoticeView successNoticeInWindow:[UIApplication sharedApplication].windows[0] title:message];
+//    }
+}
+
+static BOOL diagStat = NO;
+
+- (BOOL)webView:(UIWebView *)sender runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(CGRect)frame
+
+{
+//    GWAlertView *alert = [GWAlertView alertWithTitle:@"温馨提示" message:message];
+//    [alert show];
+//    
+//    while (alert.hidden == NO && alert.superview != nil){
+//        [[NSRunLoop mainRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.01f]];
+//    }
+//    return diagStat;
+    return NO;
+}
+
+//- (void)alertView:(GBAlertView*) alertView dismissWithButton:(int)buttonIndex
+//{
+//    if (buttonIndex == 0)
+//        
+//    {
+//        diagStat = NO;
+//    }
+//    else if (buttonIndex == 1) 
+//        
+//    {
+//        diagStat = YES;
+//    }
+//}
+
+- (NSString *)webView:(UIWebView *)view runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)text initiatedByFrame:(CGRect)frame
+{
+    return @"";
+}
+@end

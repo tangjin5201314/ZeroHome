@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="105" id="KGk-i7-Jjw" customClass="SelectAreaCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="104.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apS-eA-wJi">
+                        <rect key="frame" x="18" y="57.5" width="257" height="35"/>
+                        <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="LOh-LO-9Vb"/>
+                        </constraints>
+                        <state key="normal" title="选择机房" backgroundImage="blue.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-2j-gKq">
+                        <rect key="frame" x="18" y="12" width="257" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="请选择:省-市-区或镇" backgroundImage="搜索选择时间.png">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="selectAreaBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="B7N-6V-ukX"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SGX-2j-gKq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="6eo-2u-pr3"/>
+                    <constraint firstItem="apS-eA-wJi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="X5J-uv-sGY"/>
+                    <constraint firstAttribute="bottom" secondItem="apS-eA-wJi" secondAttribute="bottom" constant="12" id="ZgB-SO-jAC"/>
+                    <constraint firstAttribute="trailing" secondItem="apS-eA-wJi" secondAttribute="trailing" constant="45" id="f1o-Mn-sGF"/>
+                    <constraint firstItem="SGX-2j-gKq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="kdv-ld-uj2"/>
+                    <constraint firstItem="apS-eA-wJi" firstAttribute="top" secondItem="SGX-2j-gKq" secondAttribute="bottom" constant="12" id="oJ9-x6-WTC"/>
+                    <constraint firstItem="SGX-2j-gKq" firstAttribute="trailing" secondItem="apS-eA-wJi" secondAttribute="trailing" id="yYG-bd-Tgc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="selectAreaBtn" destination="SGX-2j-gKq" id="4X9-8A-Ksm"/>
+                <outlet property="selectRoomBtn" destination="apS-eA-wJi" id="Zoe-dU-aM0"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="82.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="blue.png" width="200" height="45"/>
+        <image name="搜索选择时间.png" width="140" height="32"/>
+    </resources>
+</document>

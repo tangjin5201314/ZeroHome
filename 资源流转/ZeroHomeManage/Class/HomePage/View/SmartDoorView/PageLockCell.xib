@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="KGk-i7-Jjw" customClass="PageLockCell">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g03-Jl-6c6">
+                        <rect key="frame" x="18" y="14.5" width="314" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="duY-Te-gke"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="一键开锁" backgroundImage="rounder.png">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <connections>
+                            <action selector="lockRoowBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JB6-yg-U27"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="g03-Jl-6c6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YzC-wC-XQK"/>
+                    <constraint firstAttribute="trailing" secondItem="g03-Jl-6c6" secondAttribute="trailing" constant="18" id="bq8-fI-J41"/>
+                    <constraint firstItem="g03-Jl-6c6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="tCv-4F-UOC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="pageLockBtn" destination="g03-Jl-6c6" id="MjO-76-3CV"/>
+            </connections>
+            <point key="canvasLocation" x="40" y="64"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="rounder.png" width="337" height="40"/>
+    </resources>
+</document>
